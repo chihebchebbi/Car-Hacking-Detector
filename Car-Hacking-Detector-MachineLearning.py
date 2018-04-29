@@ -18,7 +18,7 @@ flags = Res2
 Flags = flags.to_frame()
 fls = Flags[:3634582]
 X_train, X_test, y_train, y_test = train_test_split(Features, fls, test_size=0.3, random_state=0)
-logreg = LogisticRegression()
-logreg.fit(X_train, np.ravel(y_train,order='C'))
-y_pred = logreg.predict(X_test)
-print('Accuracy of logistic regression classifier on test set: {:.2f}'.format(logreg.score(X_test, y_test)))
+Cls = LogisticRegression()
+Cls.fit(X_train, np.ravel(y_train,order='C'))
+Prediction = Cls.predict(X_test)
+print('Accuracy of logistic regression classifier is: {:.2f}'.format(Cls.score(X_test, y_test)))
